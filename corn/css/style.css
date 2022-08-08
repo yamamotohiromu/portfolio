@@ -1,0 +1,294 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+
+header img {
+    width: 300px;
+    margin: 15px 0 0 15px;
+}
+
+.kensaku {
+    display: flex;
+    margin: 20px 20px 0 0;
+}
+
+.kensaku button {
+    background-color: #ddd;
+    padding: 0 5px;
+    height: 26px;
+    font-size: 100%;
+    border-radius: 3px;
+    margin-left: 15px;
+    margin-top: 2px;
+    border: #333 solid 1px;
+}
+
+.kensaku input {
+    background-color: #ddd;
+    height: 30px;
+    border-radius: 3px;
+    border: #333 solid 1px;
+    padding-left: 15px;
+    width: 200px;
+}
+
+.header-nav {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0 50px;
+}
+
+.header-nav ul {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.header-nav ul li {
+    padding: 8px 5px;
+    margin: 6px 0;
+    font-size: 15px;
+    vertical-align: bottom;
+    border-radius: 15px;
+    transition: all .2s;
+}
+
+.header-nav ul li:hover {
+    background-color: #FEc18a;
+    color: #000;
+}
+
+.header-nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    height: 100%;
+}
+
+.header-nav ul li a::after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #E42C31;
+    bottom: -16px;
+    left: 0;
+    width: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.header-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.bg {
+    background-color: #f7931e;
+}
+
+
+
+
+
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+}
+
+h1 {
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 47.5px;
+    line-height: 50px;
+    color: #ffd300;
+    text-align: center;
+    margin-top: 120px;
+}
+
+h1 span {
+    color: #51df00;
+}
+
+article p {
+    margin: 30px 5% 0 5%;
+}
+
+.top-left {
+    width: 40%;
+}
+
+.top-left button {
+    background-image: url(../images/moroko-button.svg);
+    padding: 10px;
+    width: 200px;
+    margin-left: 18%;
+    margin-top: 80px;
+    transition: all .2s;
+}
+
+.top-left button:hover {
+    width: 190px;
+    margin-top: 81px;
+    margin-left: 20%;
+    font-size: 15px;
+    opacity: .8;
+}
+
+.top-right {
+    width: 60%;
+}
+
+.top-right img {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.top-right img:hover {
+    transform:rotate(-2deg);
+}
+
+h2 {
+    margin-top: 70px;
+}
+
+h2 img {
+    width: 30px;
+    margin-right: 12px;
+    vertical-align: top;
+    margin-left: 5%;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+article {
+    width: 75%;
+}
+
+aside {
+    width: 25%;
+    margin-right: 2%;
+}
+
+.guide {
+    background-color: #eee;
+    margin-top: 70px;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+.guide .pp {
+    text-align: center;
+    font-size: 20px;
+    font-style: none;
+    margin: 20px 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.guide p a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+.guide p a:hover {
+    text-decoration: underline;
+}
+
+.guide p {
+    line-height: 36px;
+}
+
+footer {
+    margin-top: 70px;
+    text-align: center;
+    background-color: #f7931e;
+    height: 30px;
+}
+
+
+#page-top {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    height: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 90%;
+    line-height: 1.5rem;
+    color: #737373;
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+}
+
+#page-top:hover {
+    color: #000;
+}
+
+#page-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+}
+
+@media screen and ( max-width:768px ) {
+    .top {
+        display: inline;
+    }
+
+    .top-left {
+        width: 100%;
+    }
+
+    .top-left button {
+        margin-left: 30%;
+    }
+
+    .top-left button:hover {
+        margin-left: 31%;
+    }
+
+    .top-right {
+        display: none;
+    }
+
+    article {
+        width: 100%;
+    }
+    
+    aside {
+        width: 100%;
+        display: none;
+    }
+
+    main {
+        display: inline;
+    }
+}
