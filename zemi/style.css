@@ -1,0 +1,721 @@
+@charset "utf-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:-140%;
+    left:0;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#182578;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+#g-nav.panelactive{
+    top: 0;
+}
+
+/*ナビゲーションの縦スクロール*/
+#g-nav.panelactive #g-nav-list{
+    /*ナビの数が増えた場合縦スクロール*/
+    position: fixed;
+    z-index: 999; 
+    width: 100%;
+    height: 100vh;/*表示する高さ*/
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*ナビゲーション*/
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: center; 
+}
+
+#g-nav li a{
+	color: #fff;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+    font-size: 25px;
+    transition: all .3s;
+}
+
+#g-nav li a:hover {
+    background-color: #fff;
+    color: #182578;
+}
+
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top: 0;
+	left: 0;
+	cursor: pointer;
+    width: 90px;
+    height: 90px;
+    background-color: #182578;
+    transition: all .3s;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .3s;
+    position: absolute;
+    left: 27px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #fff;
+  	width: 35.5px;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:31px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:43px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:55px;
+}
+
+.openbtn.active {
+    background-color: #fff;
+}
+
+.openbtn.active span {
+    background-color: #182578;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 38px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 35px;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 50px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 35px;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menutitle {
+    font-size: 24px;
+    padding-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    text-align: center;
+    width: 90vw;
+    min-width: 220px;
+    position: fixed;
+    height: 90px;
+    background-color: #fff;
+    z-index: 998;
+    font-family: serif;
+    border-bottom: 1px solid #182578;
+}
+
+.menuright {
+    display: flex;
+    position: fixed;
+    right: 0px;
+    z-index: 999;
+}
+
+.headerbox1 {
+    height: 90px;
+    width: 90px;
+    background-color: #666;
+    z-index: 998;
+    transition: all .2s;
+}
+
+.headerbox1:hover {
+    opacity: .8;
+}
+
+.headerbox1 img {
+    width: 40px;
+    height: auto;
+    margin: 18px 25px 0 25px;
+}
+
+.headerbox1 p {
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+}
+
+.headerbox2 {
+    height: 90px;
+    width: 90px;
+    background-color: #182578;
+    transition: all .2s;
+}
+
+.headerbox2:hover {
+    opacity: .8;
+}
+
+.headerbox2 img {
+    width: 40px;
+    height: auto;
+    margin: 18px 25px 0 25px;
+}
+
+.headerbox2 p {
+    color: #fff;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 2.5px;
+}
+
+.about {
+    margin-top: 110px;
+    width: 97vw;
+    display: flex;
+}
+
+
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+    width: 70%;
+    position:relative;
+	z-index: -1;
+	/*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+    margin-left: 15vw;
+}
+/*　背景画像設定　*/
+
+.slider-item01 {
+    background:url(./img/top1.jpg);
+}
+
+.slider-item02 {
+    background:url(./img/colorful.jpg);
+}
+
+.slider-item03 {
+    background:url(./img/top2.jpg);
+}
+
+.slider-item {
+    height:40vw;
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+	z-index: 3;
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #ccc;/*矢印の色*/
+    border-right: 2px solid #ccc;/*矢印の色*/
+    height: 25px;
+    width: 25px;
+    font-size: 0;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left:-300vw;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right:300vw;
+    transform: rotate(45deg);
+}
+
+
+.about-right1 {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    width: 7.5vw;
+    vertical-align: middle;
+    font-size: 3.5vw;
+    padding-right: .5vw;
+    text-align: right;
+    font-family: serif;
+    margin-top: 15vw;
+    height: 40vw;
+}
+
+.about-right2 {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    width: 7.5vw;
+    vertical-align: middle;
+    font-size: 3.5vw;
+    padding-right: 2vw;
+    font-family: serif;
+    margin-top: 15vw;
+    height: 40vw;
+}
+
+.section-title {
+    position: absolute;
+    font-family: 'Grape Nuts', cursive;
+    color: #182578;
+    font-size: 6vw;
+    right: 10vw;
+    margin-top: 5vw;
+    z-index: 0;
+}
+
+.news {
+    position: absolute;
+    width: 40vw;
+    background-color: rgba(255,255,255,.9);
+    border-radius: .3vw;
+    margin-top: 25vw;
+    box-shadow: 0 0 1.5vw .5vw rgba(0,0,0,0.2);
+    padding: 2vw 3vw 2vw 6vw;
+}
+
+.news-title {
+    font-family: serif;
+    font-size: 3vw;
+}
+
+.news hr {
+    width: 30%;
+}
+
+.news-flex {
+    display: flex;
+    height: 5.5vw;
+}
+
+.news-day {
+    color: #666;
+    font-size: 1.8vw;
+    width: 12vw;
+    padding-top: 2.1vw;
+}
+
+.news-text {
+    color: #000;
+    padding-top: 1.5vw;
+    font-size: 2.2vw;
+    font-family: serif;
+}
+
+.contact {
+    display: flex;
+    background-color: #182578;
+    width: 80vw;
+    padding: 4vw 5vw;
+    margin-top: 2vw;
+}
+
+.contact p {
+    color: #fff;
+    width: 40vw;
+    font-size: 1.6vw;
+    font-family: serif;
+}
+
+.contact-button {
+    width: 20vw;
+    height: 6vw;
+    background-color: #fff;
+    margin: auto 0 auto 7.5vw;
+}
+
+.contact-button h5 {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding-top: 1.3vw;
+    height: 6vw;
+    font-size: 2vw;
+    font: bolder;
+    transition: all .2s;
+    background-color: #182578;
+    border: 2px solid #fff;
+}
+
+.contact-p:hover {
+    color: #182578;
+    font-size: 2.2vw;
+    padding-top: 1.2vw;
+    background-color: #fff;
+}
+
+.contact-img {
+    width: 30vw;
+    position: absolute;
+    margin-top: 8vw;
+    z-index: -1;
+    right: 0;
+}
+
+.concept {
+    margin-top: 7vw;
+}
+
+.section-title2 {
+    font-family: 'Grape Nuts', cursive;
+    color: #182578;
+    font-size: 6vw;
+    margin: 15vw auto 0 auto;
+    z-index: 0;
+    width: 80vw;
+    text-align: center;
+}
+
+.concept-flex {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5vw;
+}
+
+.concept-text {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    width: 30vw;
+    font-family: serif;
+    border-top: 5px solid #182578;
+    margin-top: 7vw;
+    padding: 3vw;
+}
+
+.concept-flex img {
+    width: 50vw;
+    height: 32vw;
+    border-radius: 14vw 1vw;
+}
+
+.concept-big {
+    font-size: 2.9vw;
+}
+
+.concept-small {
+    font-size: 2vw;
+    margin: 0 0.5vw;
+}
+
+.big-box {
+    width: 12vw;
+}
+
+.small-box {
+    margin-top: 2vw;
+    margin-right: 1.5vw;
+    width: 18vw;
+}
+
+.course-margin {
+    margin-top: 5vw;
+}
+
+.course-flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.course-box {
+    border: 3px solid #182578;
+    width: 30vw;
+    border-radius: 3vw;
+    margin-top: 6vw;
+    opacity: .9;
+    transition: all .2s;
+    padding-bottom: 2vw;
+    box-shadow: 12px 12px 0 1px rgba(24, 37, 120, 1);
+}
+
+.course-box:hover {
+    opacity: .6;
+}
+
+.cb-text {
+    margin: 2vw 3vw;
+    font-family: serif;
+    font-size: 21px;
+    color: #000;
+}
+
+.course-box img {
+    width: 100%;
+    border-radius: 2.7vw 2.7vw 0 0 ;
+}
+
+.course-border {
+    width: 30vw;
+    position: absolute;
+    margin-bottom: 20vw;
+    z-index: -1;
+}
+
+footer {
+    margin-top: 10vw;
+    background-color: #182578;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw 5vw;
+    font-family: serif;
+    font-size: 16px;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    font-weight: bolder;
+}
+
+.fadeUpTrigger{
+    opacity: 0;
+}
+
+.fadeUpTrigger2{
+    opacity: 0;
+}
+
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+@keyframes fadeUpAnime{
+from {
+    opacity: 0;
+    transform: translateY(100px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+.fadeUp2 {
+    animation-name: fadeUpAnime;
+    animation-duration:1s;
+    animation-delay: .3s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+@keyframes fadeUpAnime{
+from {
+    opacity: 0;
+    transform: translateY(100px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@media screen and (max-width:768px){
+    .section-title {
+        position: relative;
+        margin-top: 110px;
+        margin-left: 13vw;
+        width: 90vw;
+        text-align: center;
+        font-size: 55px;
+    }
+
+    .about {
+        margin-top: 20px;
+        display: inline;
+    }
+
+    .about-right1 {
+        display: none;
+    }
+
+    .about-right2 {
+        display: none;
+    }
+
+    .menuright {
+        display: none;
+    }
+
+    .menutitle {
+        width: 88vw;
+        margin-left: 12vw;
+        font-size: 20px;
+    }
+
+    .slider {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-top: 20px;
+    }
+
+    .news {
+        position: relative;
+        margin-top: 20px;
+        width: 90vw;
+        margin-left: 5vw;
+        padding-bottom: 30px;
+    }
+
+    .news-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .news hr {
+        margin: 0 auto;
+    }
+
+    .news-day {
+        margin-left: 10vw;
+        font-size: 14.5px;
+        width: 20vw;
+        margin-top: .8vw;
+    }
+
+    .news-text {
+        font-size: 20px;
+    }
+
+    .contact {
+        width: 100%;
+        display: block;
+        margin-top: 4vw;
+    }
+
+    .contact p {
+        width: 80vw;
+        font-size: 18px;
+        margin: 20px;
+    }
+
+    .contact-button h5 {
+        min-height: 50px;
+        font-size: 16px;
+        padding-top: 11px;
+    }
+
+    .contact-button {
+        width: 180px;
+        height: 50px;
+        margin: 30px auto;
+    }
+
+    .contact-img {
+        display: none;
+    }
+
+    .section-title2 {
+        margin-top: 30px;
+        font-size: 45px;
+    }
+
+    .concept-flex {
+        flex-direction: column-reverse;
+    }
+
+    .concept-flex img {
+        width: 80%;
+        height: 55%;
+        margin-top: 4vw;
+        border-radius: 0 25vw 25vw 0 ;
+    }
+
+    .concept-text {
+        width: 355px;
+        margin: 12vw auto 0 auto;
+    }
+
+    .concept-big {
+        font-size: 35px;
+    }
+
+    .concept-small {
+        font-size: 23px;
+    }
+
+    .big-box {
+        margin-right: 5vw;
+        width: 40%;
+    }
+
+    .small-box {
+        margin-right: 30px;
+        width: 130px;
+    }
+
+    .course-flex {
+        display: inline;
+    }
+
+    .course-box {
+        width: 80vw;
+        margin-left: 8vw;
+        margin-top: 10vw;
+    }
+
+    .cb-text {
+        font-size: 20px;
+        margin: 5vw 6vw;
+    }
+
+    .course-border {
+        display: none;
+    }
+
+    footer {
+        margin-top: 15vw;
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>架空のゼミナールサイト</title>
+    <link rel="icon" href="img/favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- 手書き風FONT
+        font-family: 'Grape Nuts', cursive; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet">
+    <!-- FONTここまで -->
+    <!-- スライド -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!-- スライドここまで -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+            <div class="menubtn">
+                <div class="openbtn"><span></span><span></span><span></span></div>
+                <nav id="g-nav">
+                <div id="g-nav-list"><!--ナビの数が増えた場合縦スクロールするためのdiv※不要なら削除-->
+                <ul>
+                <li><a href="#">トップ</a></li> 
+                <li><a href="#concept">ゼミ概要</a></li> 
+                <li><a href="#course">コース一覧</a></li> 
+                </ul>
+                </div>
+                </nav>
+            </div>
+            <h1 class="menutitle">やまもと短期ゼミナール</h1>
+            <div class="menuright">
+                <a href="#"><div class="headerbox1">
+                    <img src="img/map.png" alt="アクセス">
+                    <p>アクセス</p>
+                </div></a>
+                <a href="#"><div class="headerbox2">
+                    <img src="img/book.png" alt="資料請求">
+                    <p>資料請求</p>
+                </div></a>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title fadeUpTrigger2">About</h2>
+        <div class="news fadeUpTrigger2">
+            <p class="news-title">お知らせ</p>
+            <hr>
+            <div class="news-flex">
+                <p class="news-day">2022/5/28</p>
+                <p class="news-text"><a href="#">業務実績</a></p>
+            </div>
+            <div class="news-flex">
+                <p class="news-day">2022/4/1</p>
+                <p class="news-text"><a href="#">採用情報の更新</a></p>
+            </div>
+        </div>
+        <div class="about">
+            <ul class="slider fadeUpTrigger">
+                <li class="slider-item slider-item01"></li>
+                <li class="slider-item slider-item02"></li>
+                <li class="slider-item slider-item03"></li>
+            </ul>
+            <p class="about-right1 fadeUpTrigger2">充実のサポート ー</p>
+            <p class="about-right2 fadeUpTrigger">ー こどもに合った</p>
+        </div>
+    </section>
+
+    <div class="contact">
+        <p class="fadeUpTrigger">お客様に合った専門のカリキュラムを、講師がマンツーマンで解説。<br>苦手な教科をしっかり克服プラン・得意な科目をとことん伸ばすプランなど<br>お気軽にご相談ください。</p>
+        <div class="contact-button fadeUpTrigger2">
+            <a href="#"><h5 class="contact-p">問合せはこちら</h5></a>
+        </div>
+        <img src="img/border.svg" alt="背景" class="contact-img">
+    </div>
+    <section class="concept" id="concept">
+        <h2 class="section-title2 fadeUpTrigger">Company Concept</h2>
+        <div class="concept-flex">
+            <div class="concept-text fadeUpTrigger2">
+                <div class="big-box">
+                    <p class="concept-big">万全の体制で</p>
+                    <p class="concept-big">子供たちの学習をサポート</p>
+                </div>
+                <div class="small-box">
+                    <p class="concept-small">快適な自習室を完備。</p>
+                    <p class="concept-small">子供たちの個性を大切に、</p>
+                    <p class="concept-small">考える力を伸ばします。</p>
+                </div>
+            </div>
+            <img src="img/studying.png" alt="やまもと短期ゼミナール" class="fadeUpTrigger2">
+        </div>
+    </section>
+    
+    <section class="course" id="course">
+        <h2 class="section-title2 course-margin fadeUpTrigger">Course Introduce</h2>
+        <div class="course-flex">
+            <a href="#"><div class="course-box fadeUpTrigger">
+                <img src="img/course1jpeg.jpeg" alt="">
+                <p class="cb-text"><strong>お子さんの苦手な科目・教科を専門の講師がマンツーマンで集中解説。<br>苦手を魔法に変えられる魔法のコースです。<br>初回限定の割引にも対応しています。<br><br>詳しくはこちら →</strong></p>
+            </div></a>
+            <a href="#"><div class="course-box fadeUpTrigger2">
+                <img src="img/course2jpg.jpg" alt="">
+                <p class="cb-text"><strong>お子さんの得意な科目・教科を専門の講師がマンツーマンで集中解説。<br>お子さんの満足度も高い魔法のコースです。<br>初回限定の割引にも対応しています。<br><br>詳しくはこちら →</strong></p>
+            </div></a>
+        </div>
+        <img src="img/border.svg" alt="やまもと短期ゼミナール" class="course-border">
+    </section>
+
+    <footer>
+        <p>&copy やまもとゼミ</p>
+        <p>01-2345-6789</p>
+        <a href="#"><p>プライバシーポリシー</p></a>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
