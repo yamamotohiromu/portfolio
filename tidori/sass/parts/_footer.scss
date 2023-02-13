@@ -1,0 +1,142 @@
+@use "variables" as v;
+
+footer {
+
+    .white-background {
+            background-image: url(../images/footer-top-white.svg);
+            background-size: cover;
+            @include v.tab {
+            background-image: url(../images/footer-top-white.svg);
+            background-size: cover;
+            }
+            @include v.pc {
+            background-image: url(../images/footer-top-pc.svg);
+            background-size: cover;
+            }
+        }
+
+    .blue-background {
+        background-image: url(../images/fotter-top-blue.svg);
+        background-size: cover;
+        @include v.tab {
+
+            }
+        @include v.pc {
+
+        }
+
+        }
+
+    .info__box {
+        padding-top: 150px;
+        // background-color: v.$base-color;
+        text-align: center;
+        @include v.tab {
+            pointer-events: none;
+        }
+        @include v.pc {
+            padding-top: 200px;
+            pointer-events: none;
+        }
+ 
+        a[href^="tel:"] {
+            @include v.tab {
+                pointer-events: none;
+            }
+            @include v.pc {
+                pointer-events: none;
+            }
+        }
+
+        .tel {
+            margin: 0 auto;
+            background-color: v.$accent-color;
+            display: inline-block;
+            text-align: center;
+            padding: 20px 40px;
+            border-radius: 10px;
+         
+            p {
+                color: #fff;
+                font-weight: bold;
+                font-size: v.rem(16);
+            }
+            p:nth-of-type(2){
+                margin-top: 3px;
+                margin-bottom: 2px;
+            }
+            p:first-of-type {
+                font-size: v.rem(30);
+                font-weight: bold;
+            }
+            p:last-of-type {
+                font-size: v.rem(16);
+            }
+        }
+
+        .info__list {
+            width: 200px;
+            margin: 0 auto;
+            @include v.tab {
+                width: 400px;
+                font-size:  v.rem(20);
+            }
+            @include v.pc {
+                width: 400px;
+                font-size: v.rem(20);
+            }
+
+            .info__text1 {
+                text-align: left;
+                padding-top: 20px;
+                padding-bottom: 1em;
+                display: inline-block;
+        
+            }
+            .info__text2 {
+                text-align: left;
+                display: inline-block;    
+            }
+        }
+    }
+
+    .copyright {
+        background-color: rgb(205, 151, 124);
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        img {
+            width: 100px;
+
+        }
+
+        p {
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+.info__flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.info__gif {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.info__gif2 {
+    display: flex;
+}
+
+@media screen and (max-width:768px){
+
+small {
+    font-size: 0.875rem;
+}
+}
+

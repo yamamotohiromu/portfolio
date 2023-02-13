@@ -1,0 +1,86 @@
+@charset "utf-8";
+/*========= モーダル表示のためのCSS ===============*/
+
+/*全て共通：hideエリアをはじめは非表示*/
+.hide-area{
+	display: none;
+}
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:rgb(255, 252, 252);	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#F1B95F;
+}
+
+#modaal-gallery-prev,
+#modaal-gallery-next
+{
+	width: 40px;
+	height: 40px;
+	background-color: rgb(112, 151, 229);
+}
+
+#modaal-gallery-prev::after,
+#modaal-gallery-prev::before{
+	left: 15px;
+	top: 10px;
+}
+#modaal-gallery-next::after,
+#modaal-gallery-next::before{
+	left: 20px;
+	top: 10px;
+}
+
+.modaal-gallery-item {
+	/* position:fixed; */
+
+}
+
+/*以下はコンテンツ内のレイアウト*/
+.info-list dl,
+.gallery-list{
+	display: flex;
+}
+
+.info-list dt{
+	margin:0 10px 0 0;
+}
+
+.gallery-list li{
+	margin:0 10px 0 0;
+}
+
+.modaal-close {
+	top: 80px;
+	right: 10%;
+}
+
+.modaal-close:after {
+	background-color: grey;
+}
+
+.modaal-close:before {
+	background-color: grey;
+}
+
+@media screen and (min-width: 768px) {
+
+	.modaal-close {
+		top: 80px;
+		right: 15%;
+	}
+}
+@media screen and (min-width: 1280px) {
+
+	.modaal-close {
+		top: 80px;
+		right: 25%;
+	}
+}

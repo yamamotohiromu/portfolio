@@ -1,0 +1,45 @@
+//メディアクエリー
+$pc: 1280px; //pc
+$tab: 768px; //タブレット
+$sp: 375px;  //スマホ
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+      @content;
+    }
+  }
+
+@mixin tab {
+    @media (min-width: ($tab)) {
+      @content;
+    }
+  }
+
+@mixin sp {
+    @media (min-width: ($sp)) {
+      @content;
+    }
+  }
+
+//フォントサイズ
+$h2-font-size: 2.25rem;
+$h3-font-size: 1.5rem;
+$base-font-size: 1rem;
+
+@function rem($px, $base: 16) {
+    @return $px / $base * 1rem;
+  }
+
+//フォント
+$font-family: 'Noto Serif JP', serif;
+$font-number: 'Alex Brush', serif;
+$h2: 'Kaisei Opti', serif;
+
+//フォントカラー
+$font-color: #8F6B50;
+
+//カラー
+$base-color: #f5ede1;
+$main-color: #D8EAEF;
+$accent-color: #F1B95F;
+$blue: #D8EAEF;
